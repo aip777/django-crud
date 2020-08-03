@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="student">
+ <h1>Student Information</h1>
+</div>
+
+<table>
+
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Father Name</th>
+    <th>Mother Name</th>
+    <th>CGPA</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  {% for obj in qs %}
+  <tr>
+
+    <td>{{obj.id_number}}</td>
+    <td>{{obj.first_name}} {{obj.last_name}}</td>
+    <td>{{obj.email}}</td>
+    <td>{{obj.phone}}</td>
+    <td>{{obj.father_name}}</td>
+    <td>{{obj.mother_name}}</td>
+    <td>{{obj.cgpa}}</td>
+   <td>
+    <a class="btn btn-sm btn-danger" href="delete/{{ obj.id }}"><span class="fa fa-trash"></span>&nbsp;Delete</a>
+   </td>
+   <td>
+    <a class="btn btn-sm btn-danger" href="update/{{ obj.id }}"><span class="fa fa-trash"></span>&nbsp;Edit</a>
+   </td>
+
+
+
+  </tr>
+  {% endfor %}
+
+</table>
+
+{% endblock %}
