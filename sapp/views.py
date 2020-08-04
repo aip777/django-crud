@@ -19,8 +19,8 @@ def home(request):
     return render(request, 'studentinfo.html', context)
 
 
-class ItemCreateView(LoginRequiredMixin, CreateView):
-    template_name = 'form.html'
+class StudentCreateView(LoginRequiredMixin, CreateView):
+    template_name = 'create-form.html'
     form_class = StudentInfo
     success_url = '/'
 

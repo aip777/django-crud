@@ -2,19 +2,24 @@
 
 {% block content %}
 <div class="student">
- <h1>Student Information</h1>
+ <h1>Students Information</h1>
 </div>
 
 <table>
 
   <tr>
     <th>ID</th>
+    <th>Department</th>
     <th>Name</th>
     <th>Email</th>
     <th>Phone Number</th>
     <th>Father Name</th>
     <th>Mother Name</th>
+    <th>Guidance Phone</th>
     <th>CGPA</th>
+    <th>
+        <a class="btn btn-sm btn-danger" href="create"><span class="fa fa-trash"></span>&nbsp;Add</a>
+     </th>
     <th>Delete</th>
     <th>Edit</th>
   </tr>
@@ -22,12 +27,19 @@
   <tr>
 
     <td>{{obj.id_number}}</td>
+    <td>{{obj.department}}</td>
     <td>{{obj.first_name}} {{obj.last_name}}</td>
     <td>{{obj.email}}</td>
     <td>{{obj.phone}}</td>
     <td>{{obj.father_name}}</td>
     <td>{{obj.mother_name}}</td>
+    <td>{{obj.guidancephone}}</td>
     <td>{{obj.cgpa}}</td>
+
+    <td>
+        <a class="btn btn-sm btn-danger" href="create"><span class="fa fa-trash"></span>&nbsp;Add</a>
+     </td>
+
    <td>
     <a class="btn btn-sm btn-danger" href="delete/{{ obj.id }}"><span class="fa fa-trash"></span>&nbsp;Delete</a>
    </td>
